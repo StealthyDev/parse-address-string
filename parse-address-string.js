@@ -1,4 +1,4 @@
-function explodeAddress(singleLineAddress, cb) {
+function explodeAddress(singleLineAddress) {
     var addressObj = {
         street_address1: null
         , city: null
@@ -7,8 +7,7 @@ function explodeAddress(singleLineAddress, cb) {
         , country: null
     }
     if (typeof singleLineAddress != 'string') {
-        //return cb(new Error('Input must be a String'))
-        return cb(false, addressObj)
+        return addressObj;
     }
     singleLineAddress = singleLineAddress.trim()
 
@@ -42,7 +41,7 @@ function explodeAddress(singleLineAddress, cb) {
         addressObj.street_address1 = addySplit[0].trim()
         addressObj.city = addySplit[1].trim()
         addressObj.state = addySplit[2].trim()
-        return cb(false, addressObj)
+        return addressObj
     }
 
     // Handle generic case...
@@ -64,13 +63,12 @@ function explodeAddress(singleLineAddress, cb) {
         !addressObj.city && (addressObj.city = addyPart)
     })
 
-    cb(false, addressObj)
+    return addressObj;
 }
 
-function implodeAddress(addressObj, cb) {
+function implodeAddress(addressObj) {
     if (addressObj === null || typeof addressObj != 'object') {
-        //return cb(new Error('Input must be an Object'))
-        return cb(false, '')
+        return '';
     }
     var addyParts = []
         , addyPart
@@ -93,7 +91,7 @@ function implodeAddress(addressObj, cb) {
     if (typeof addressObj.country == 'string' && (addyPart = addressObj.country.trim())) {
         singleLineAddress += singleLineAddress ? ', ' + addyPart : addyPart
     }
-    cb(false, singleLineAddress)
+    return singleLineAddress;
 }
 
 var states
