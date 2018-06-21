@@ -132,5 +132,3 @@ function looksLikeCountry(str) {
     }
     return !!countries[str]
 }
-
-export function explodeAddress;
