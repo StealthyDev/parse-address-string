@@ -1,0 +1,13 @@
+{
+  "name": "parse-address-string",
+  "version": "0.0.1",
+  "description": "Parse Addresses",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StealthyDev/parse-address-string.git"
+  },
+  "private": false,
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
