@@ -1,1 +1,0 @@
-declare function explodeAddress(singleLineAddress: string, callback: any): any;

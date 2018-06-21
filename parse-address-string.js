@@ -132,3 +132,5 @@ function looksLikeCountry(str) {
     }
     return !!countries[str]
 }
+
+export {explodeAddress, implodeAddress}
